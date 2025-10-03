@@ -1,11 +1,11 @@
 import telebot
 
-# Вставь сюда свой токен от BotFather
-TOKEN = "ВАШ_ТОКЕН"
+TOKEN = "8337610302:AAGgbxMWrTWTcERD_YeVk3_hWDJscx3Bhxw"
 bot = telebot.TeleBot(TOKEN)
 
-@bot.message_handler(commands=['start'])
-def send_welcome(message):
-    bot.reply_to(message, "Привет! Я твой тестовый бот 💅")
+@bot.message_handler(func=lambda message: True)
+def echo_all(message):
+    bot.reply_to(message, "Привет!")
 
-bot.polling()
+if __name__ == "__main__":
+    bot.polling(none_stop=True)
